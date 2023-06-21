@@ -27,7 +27,7 @@
                     <input type="text" class="textfield" value="" id="numMeters" name="" onkeyup="isMeter()" />
                 </div>
             </div>
-            <button type="button" class="btn btn-primary" id="IngresarPersonajes"> Ingresar Personajes
+            <button type="button" class="btn btn-primary" id="IngresarPersonajes" onclick="funcionIngresar()"> Ingresar Personajes
             </button>
             <section class="section">
                 <div class="row align-items-center">
@@ -43,18 +43,34 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
     </body>
     <script>
+        var global1;
+        var global2;
         function isNumber() {
             var x = document.getElementById("numPersonajes").value;
            if(x!=3 && x != 4 && x != 5){
                return alert("Los números tienen que ser enteros del 3 al 5");
+               global1 = 0;
            }
+            global1 = 1;
         }
         function isMeter() {
             var x = document.getElementById("numMeters").value;
             if(x!=4 && x != 5 && x != 6 && x != 7 && x != 8){
                 return alert("El tamaño de la pista tiene que ser un entero del 4 al 8");
+                global2=0;
+            }
+            global2=1;
+        }
+        function funcionIngresar() {
+            var x = document.getElementById("numMeters").value;
+            if(global1 == 1 && global2 == 1){
+                for (var i = 0; i < x; i++) {
+                }
+            }else{
+                alert("INGRESE PARÁMETROS CORRECTOS.")
             }
         }
+
 
     </script>
 </html>
